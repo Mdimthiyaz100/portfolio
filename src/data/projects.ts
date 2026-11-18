@@ -1,5 +1,5 @@
 import type { Project } from "../types";
-import { BriefcaseBusiness, CalendarDays, PackageCheck } from "lucide-react";
+import { CalendarDays, PackageCheck } from "lucide-react";
 
 export const projects = [
   {
@@ -19,12 +19,5 @@ export const projects = [
     technologies: ["react", "typescript", "hono"],
     githubUrl: "https://github.com/Mdimthiyaz100/EventX",
     demoUrl: "https://eventx-1-iuzj.onrender.com/",
-  },
-  {
-    name: "CareerGo",
-    summary: "Career and job management platform.",
-    previewIcon: BriefcaseBusiness,
-    accent: "plum",
-    technologies: ["react", "typescript", "hono"],
   },
 ] as const satisfies readonly Project[];

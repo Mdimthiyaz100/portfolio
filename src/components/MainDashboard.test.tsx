@@ -16,7 +16,7 @@ describe("portfolio", () => {
     expect(screen.getByRole("link", { name: "Skills" }).getAttribute("href")).toBe("#skills");
     expect(screen.getByRole("heading", { name: "DeliveryHub" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "EventX" })).toBeTruthy();
-    expect(screen.getByRole("heading", { name: "CareerGo" })).toBeTruthy();
+    expect(screen.queryByRole("heading", { name: "CareerGo" })).toBeNull();
   });
 
   it("provides the supplied project, email, and LinkedIn links", () => {
