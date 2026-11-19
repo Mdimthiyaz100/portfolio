@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownToLine, ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { personal } from "../data/personal";
 import { heroTechnologies } from "../data/skills";
@@ -38,6 +38,9 @@ export function Hero() {
           </a>
           <a className="button button--outline" href="#projects">
             <ArrowDownRight size={16} aria-hidden="true" /> View Projects
+          </a>
+          <a className="button button--outline" href={personal.resumeFile} download>
+            <ArrowDownToLine size={16} aria-hidden="true" /> Download CV
           </a>
         </motion.div>
       </motion.div>
