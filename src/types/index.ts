@@ -6,6 +6,7 @@ export interface Project {
   summary: string;
   previewIcon: LucideIcon;
   accent: "violet" | "blue" | "plum";
+  artwork?: "deliveryhub" | "eventx";
   technologies: readonly TechnologyId[];
   githubUrl?: string;
   demoUrl?: string;

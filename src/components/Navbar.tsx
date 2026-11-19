@@ -6,6 +6,7 @@ const navigationItems = [
   { label: "Home", id: "home" },
   { label: "About", id: "about" },
   { label: "Projects", id: "projects" },
+  { label: "Experience", id: "experience" },
   { label: "Skills", id: "skills" },
   { label: "Contact", id: "contact" },
 ] as const;

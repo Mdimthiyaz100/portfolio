@@ -726,6 +726,41 @@ a:focus-visible {
   gap: 22px;
 }
 
+.experience-section {
+  padding-block: 0 72px;
+  scroll-margin-top: 94px;
+}
+
+.experience-heading { max-width: 760px; margin-bottom: 26px; }
+.experience-heading .eyebrow { margin-bottom: 7px; font-size: 9px; letter-spacing: 0.2em; }
+.experience-heading h2 { margin: 0; font-size: clamp(36px, 3vw, 48px); font-weight: 720; letter-spacing: -0.055em; line-height: 1.1; }
+.experience-heading h2 span { color: #c084fc; }
+.experience-heading > p:last-child { margin: 12px 0 0; color: #a1a1aa; font-size: 16px; line-height: 1.6; }
+.experience-timeline { display: grid; gap: 18px; padding-left: 27px; border-left: 1px solid rgba(192, 132, 252, .45); }
+.experience-card { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(220px, .62fr); gap: 20px; padding: 20px; border: 1px solid rgba(255, 255, 255, .1); border-radius: 13px; background: linear-gradient(155deg, rgba(23, 21, 30, .98), rgba(14, 14, 19, .98)); box-shadow: 0 8px 22px rgba(0, 0, 0, .18); transition: border-color 180ms ease, box-shadow 180ms ease; }
+.experience-card:hover { border-color: rgba(192, 132, 252, .46); box-shadow: 0 12px 30px rgba(0, 0, 0, .3), 0 0 18px rgba(124, 58, 237, .12); }
+.experience-card::before { position: absolute; top: 25px; left: -37px; width: 13px; height: 13px; border: 3px solid #d8b4fe; border-radius: 50%; background: #7c3aed; box-shadow: 0 0 0 4px rgba(168, 85, 247, .13), 0 0 13px rgba(168, 85, 247, .62); content: ""; }
+.experience-overview { display: flex; align-items: flex-start; gap: 14px; min-width: 0; }
+.experience-company-logo { width: 102px; min-width: 102px; height: 72px; border: 1px solid rgba(255, 255, 255, .1); border-radius: 10px; background-color: #fff; background-image: url("/images/experience-logos-sheet.png"); background-repeat: no-repeat; background-size: 200% auto; }
+.experience-company-logo--maskan { background-position: left center; }
+.experience-company-logo--faaz { background-position: right center; }
+.experience-company-content { min-width: 0; }
+.experience-company-content h3 { display: flex; align-items: center; gap: 7px; margin: 0; color: #f4f4f5; font-size: 16px; font-weight: 700; line-height: 1.35; }
+.experience-company-content h3 svg { flex: none; color: #e879f9; }
+.experience-role { margin: 6px 0; color: #d3a9ff; font-size: 14px; font-weight: 650; }
+.experience-period { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid rgba(192, 132, 252, .44); border-radius: 99px; color: #ded0f5; font-size: 11px; }
+.experience-period--current { color: #86efac; border-color: rgba(52, 211, 153, .48); }
+.experience-description { margin: 10px 0 0; color: #c2c2cb; font-size: 13px; line-height: 1.6; }
+.experience-responsibilities,.experience-technologies { min-width: 0; padding-left: 18px; border-left: 1px solid rgba(255,255,255,.1); }
+.experience-responsibilities h4,.experience-technologies h4 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; color: #e8e5ee; font-size: 14px; font-weight: 650; }
+.experience-responsibilities h4 svg,.experience-technologies h4 svg { flex: none; color: #e7a5ff; }
+.experience-responsibilities ul,.experience-technologies ul { display: flex; flex-wrap: wrap; gap: 6px 9px; margin: 0; padding: 0; list-style: none; }
+.experience-responsibilities ul { display: grid; gap: 5px; }
+.experience-responsibilities li { display: flex; align-items: flex-start; gap: 7px; color: #c8c6d0; font-size: 11px; line-height: 1.45; }
+.experience-responsibilities li svg { flex: none; margin-top: 1px; padding: 2px; border-radius: 50%; color: white; background: #7c3aed; }
+.experience-technologies li { display: inline-flex; min-height: 28px; align-items: center; gap: 5px; padding: 3px 7px; border: 1px solid rgba(255,255,255,.09); border-radius: 7px; color: #c7c6ce; background: rgba(255, 255, 255, .025); font-size: 10px; white-space: nowrap; }
+.experience-technologies .tech-icon { width: 15px; height: 15px; color: #c084fc; }
+
 .project-card {
   min-width: 0;
   overflow: hidden;
@@ -744,13 +779,18 @@ a:focus-visible {
 .project-preview {
   position: relative;
   display: grid;
-  height: clamp(190px, 17vw, 270px);
+  height: auto;
+  aspect-ratio: 1 / 1;
   place-items: center;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 80% 18%, rgba(168, 85, 247, 0.48), transparent 46%),
     linear-gradient(125deg, #29183a, #120f19 71%);
 }
+
+.project-preview--wide { aspect-ratio: 3 / 2; }
+
+.project-preview__artwork { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .project-card--blue .project-preview {
   background:
@@ -1349,6 +1389,10 @@ a:focus-visible {
     gap: 11px;
   }
 
+  .experience-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .experience-overview { grid-column: 1 / -1; }
+  .experience-technologies { border-left: 1px solid rgba(255,255,255,.14); }
+
   .project-list {
     gap: 8px;
   }
@@ -1534,6 +1578,19 @@ a:focus-visible {
     padding-bottom: 54px;
   }
 
+  .experience-section { padding-bottom: 48px; }
+  .experience-heading > p:last-child { font-size: 15px; }
+  .experience-timeline { padding-left: 19px; }
+  .experience-card { grid-template-columns: minmax(0, 1fr); gap: 17px; padding: 16px; }
+  .experience-card::before { left: -29px; width: 13px; height: 13px; }
+  .experience-overview { grid-column: auto; gap: 12px; }
+  .experience-company-logo { width: 64px; min-width: 64px; height: 60px; }
+  .experience-company-content h3 { font-size: 16px; }
+  .experience-role { font-size: 14px; }
+  .experience-description { font-size: 13px; }
+  .experience-responsibilities,.experience-technologies { padding: 14px 0 0; border-top: 1px solid rgba(255,255,255,.14); border-left: 0; }
+  .experience-responsibilities li { font-size: 13px; }
+
   .featured-intro > p:not(.eyebrow) {
     max-width: 360px;
     font-size: 15px;
@@ -1550,8 +1607,10 @@ a:focus-visible {
   }
 
   .project-preview {
-    height: clamp(180px, 48vw, 260px);
+    aspect-ratio: 1 / 1;
   }
+
+  .project-preview--wide { aspect-ratio: 3 / 2; }
 
   .project-card__body {
     padding: 18px 20px 20px;

@@ -18,13 +18,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
       whileHover={reduceMotion ? undefined : { y: -4 }}
       transition={{ duration: 0.24, ease: "easeOut" }}
     >
-      <div className="project-preview" aria-hidden="true">
-        <span className="project-preview__grid" />
-        <span className="project-preview__orbit project-preview__orbit--one" />
-        <span className="project-preview__orbit project-preview__orbit--two" />
-        <span className="project-preview__monogram">{project.name.slice(0, 2).toUpperCase()}</span>
-        <span className="project-preview__mark"><PreviewIcon size={25} strokeWidth={1.5} /></span>
-        <span className="project-preview__glow" />
+      <div className={`project-preview${project.artwork === "deliveryhub" ? " project-preview--wide" : ""}`} aria-hidden="true">
+        {project.artwork && (
+          <img
+            className="project-preview__artwork"
+            src={`/images/${project.artwork}.png`}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+        {!project.artwork && (
+          <>
+            <span className="project-preview__grid" />
+            <span className="project-preview__orbit project-preview__orbit--one" />
+            <span className="project-preview__orbit project-preview__orbit--two" />
+            <span className="project-preview__monogram">{project.name.slice(0, 2).toUpperCase()}</span>
+            <span className="project-preview__mark"><PreviewIcon size={25} strokeWidth={1.5} /></span>
+            <span className="project-preview__glow" />
+          </>
+        )}
       </div>
       <div className="project-card__body">
         <div className="project-card__heading">

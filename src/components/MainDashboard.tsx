@@ -6,6 +6,7 @@ import { StatsSection } from "./StatsSection";
 import { AboutSection } from "../sections/AboutSection";
 import { FeaturedProjects } from "../sections/FeaturedProjects";
 import { Hero } from "../sections/Hero";
+import { ExperienceSection } from "../sections/ExperienceSection";
 
 export function MainDashboard() {
   return (
@@ -17,6 +18,7 @@ export function MainDashboard() {
         <Hero />
         <StatsSection />
         <FeaturedProjects />
+        <ExperienceSection />
         <AboutSection />
         <ContactSection />
       </main>
