@@ -23,9 +23,10 @@ export function ContactSection() {
       </div>
       <div className="contact-emblem"><Send size={25} strokeWidth={1.6} aria-hidden="true" /></div>
       <div className="contact-copy">
-        <p className="eyebrow">LET&apos;S WORK TOGETHER</p>
-        <h2 id="contact-title">Have a project in mind?</h2>
+        <p className="eyebrow">OPEN TO JOB OPPORTUNITIES</p>
+        <h2 id="contact-title">Looking for a Dedicated Software Engineer?</h2>
         <p>{personal.contactDescription}</p>
+        <p className="contact-availability">Available for full-time Software Engineer / Full Stack Developer opportunities.</p>
         {personal.email && (
           <a className="contact-email" href={`mailto:${personal.email}`}>
             {personal.email}
@@ -34,14 +35,12 @@ export function ContactSection() {
       </div>
       <div className="contact-action">
         {personal.email ? (
-          <motion.a
+          <a
             className="button button--light"
-            href={`mailto:${personal.email}`}
-            whileHover={reduceMotion ? undefined : { y: -2 }}
-            whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+            href="mailto:mimthiyaz100@gmail.com?subject=Job%20Opportunity%20-%20Mohamed%20Imthiyaz"
           >
-            Contact Me <ArrowUpRight size={16} aria-hidden="true" />
-          </motion.a>
+            Send Me an Email <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
         ) : (
           <>
             <button
@@ -50,7 +49,7 @@ export function ContactSection() {
               disabled
               title="Add your email in src/data/personal.ts to enable contact."
             >
-              Contact Me <ArrowUpRight size={16} aria-hidden="true" />
+              Send Me an Email <ArrowUpRight size={16} aria-hidden="true" />
             </button>
             <span className="contact-note">Add an email address to enable this button.</span>
           </>

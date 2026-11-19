@@ -9,5 +9,6 @@ export const personal = {
     "Software Engineer building scalable web applications, modern user experiences and efficient backend systems.",
   aboutDescription:
     "I'm a Software Engineer with a strong focus on full-stack development, building scalable and user-friendly web applications using modern technologies.",
-  contactDescription: "I'm open for new opportunities and collaborations.",
+  contactDescription:
+    "I'm actively seeking opportunities to grow as a Software Engineer, contribute to innovative products, and work with talented development teams.",
 } as const;
