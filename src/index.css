@@ -780,7 +780,7 @@ a:focus-visible {
   position: relative;
   display: grid;
   height: auto;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   place-items: center;
   overflow: hidden;
   background:
@@ -788,9 +788,13 @@ a:focus-visible {
     linear-gradient(125deg, #29183a, #120f19 71%);
 }
 
-.project-preview--wide { aspect-ratio: 3 / 2; }
-
-.project-preview__artwork { display: block; width: 100%; height: 100%; object-fit: cover; }
+.project-preview__artwork {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
 
 .project-card--blue .project-preview {
   background:
@@ -803,6 +807,8 @@ a:focus-visible {
     radial-gradient(ellipse at 83% 18%, rgba(192, 132, 252, 0.43), transparent 46%),
     linear-gradient(125deg, #301b3c, #110f19 73%);
 }
+
+.project-card .project-preview--artwork { background: #09090b; }
 
 .project-preview__grid {
   position: absolute;
@@ -1605,12 +1611,6 @@ a:focus-visible {
     grid-template-columns: minmax(0, 1fr);
     gap: 18px;
   }
-
-  .project-preview {
-    aspect-ratio: 1 / 1;
-  }
-
-  .project-preview--wide { aspect-ratio: 3 / 2; }
 
   .project-card__body {
     padding: 18px 20px 20px;

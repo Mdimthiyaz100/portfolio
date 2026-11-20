@@ -18,7 +18,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       whileHover={reduceMotion ? undefined : { y: -4 }}
       transition={{ duration: 0.24, ease: "easeOut" }}
     >
-      <div className={`project-preview${project.artwork === "deliveryhub" ? " project-preview--wide" : ""}`} aria-hidden="true">
+      <div className={`project-preview${project.artwork ? " project-preview--artwork" : ""}`} aria-hidden="true">
         {project.artwork && (
           <img
             className="project-preview__artwork"
